@@ -6,10 +6,11 @@ using UnityEngine.UIElements;
 
 public class EnemyAI : MonoBehaviour {
     private NavMeshAgent _navMeshAgent;
-    [SerializeField] private Transform goalTransform;
+    private Transform goalTransform;
 
     private void Start() {
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        goalTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update() {
